@@ -1,3 +1,9 @@
+import Experience from "../../components/experience/experience"
+
 export default function Build() {
-	return <div>build</div>
+	return (
+		<div className="Build">
+			<Experience />
+		</div>
+	)
 }
