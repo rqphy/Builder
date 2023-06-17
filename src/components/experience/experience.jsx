@@ -9,7 +9,7 @@ export default function Experience() {
 				fov: 45,
 				near: 0.1,
 				far: 200,
-				position: [0, 0, 3],
+				position: [3, 8, 8],
 			}}
 		>
 			<directionalLight
