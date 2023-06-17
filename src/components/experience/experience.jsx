@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber"
-import { BoxGeometry } from "three"
 
 export default function Experience() {
 	return (
