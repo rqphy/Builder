@@ -1,8 +1,8 @@
-export default function Cube() {
+export default function Cube({ pos = [0, 0, 0], color = "red" }) {
 	return (
-		<mesh>
+		<mesh position={pos}>
 			<boxGeometry />
-			<meshBasicMaterial color={"red"} />
+			<meshBasicMaterial color={color} />
 		</mesh>
 	)
 }
