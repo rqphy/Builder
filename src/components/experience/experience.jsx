@@ -1,4 +1,5 @@
 import { Canvas } from "@react-three/fiber"
+import Cube from "../cube/cube"
 
 export default function Experience() {
 	return (
@@ -17,10 +18,7 @@ export default function Experience() {
 				color={"#e8dfdd"}
 			/>
 			<ambientLight intensity={0.2} />
-			<mesh>
-				<boxGeometry />
-				<meshBasicMaterial color={"red"} />
-			</mesh>
+			<Cube />
 		</Canvas>
 	)
 }
