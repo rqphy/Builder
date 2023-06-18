@@ -1,15 +1,16 @@
 export default function Cube({ pos = [0, 0, 0], color = "red", size = 2 }) {
 	const handleCubeClick = (_event) => {
-		console.log(_event.point)
-		findBuildCoords(_event.point)
+		console.log(_event.eventObject.position)
+		findBuildCoords(_event.point, _event.eventObject.position)
 	}
 
-	const findBuildCoords = (point) => {
-		const coords = [...Object.values(point)]
-		const directionIndex = coords.findIndex((x) => x % 1 === 0)
-		const newCoords = [0, 0, 0]
+	const findBuildCoords = (point, eventObjectPos) => {
+		const objectPos = [...Object.values(eventObjectPos)]
+		const pointerPos = [...Object.values(point)]
+		const directionIndex = pointerPos.findIndex((x) => x % 1 === 0)
+		const newCoords = [...objectPos]
 		if (directionIndex === -1) return
-		newCoords[directionIndex] = coords[directionIndex] + size / 2
+		newCoords[directionIndex] = pointerPos[directionIndex] + size / 2
 		console.log(newCoords)
 	}
 
