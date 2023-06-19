@@ -35,6 +35,7 @@ export default function Column({ size = 2 }) {
 					key={position.toString()}
 					size={size}
 					pos={position}
+					color={`hsl(${Math.random() * 360}, 100%, 75%)`}
 					handleClick={handleCubeClick}
 				/>
 			))}
