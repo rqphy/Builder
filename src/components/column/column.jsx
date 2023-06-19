@@ -18,6 +18,7 @@ export default function Column({ size = 2 }) {
 		setCubesPositions([...cubesPositions, buildCoords])
 	}
 
+	// todo: fix undefined coords issue
 	const findBuildCoords = (point, eventObjectPos) => {
 		const objectPos = [...Object.values(eventObjectPos)]
 		const pointerPos = [...Object.values(point)]
