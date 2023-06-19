@@ -4,11 +4,16 @@ export default function Column({ size = 2 }) {
 	const [cubesPositions, setCubesPositions] = useState([[0, 0, 0]])
 
 	const handleCubeClick = (_event) => {
+		// obstruct raycaster
+		_event.stopPropagation()
+
+		// get new cube coords
 		const buildCoords = findBuildCoords(
 			_event.point,
 			_event.eventObject.position
 		)
-		console.log(buildCoords)
+
+		// build new cube
 		setCubesPositions([...cubesPositions, buildCoords])
 	}
 
