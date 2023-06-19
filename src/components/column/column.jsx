@@ -14,6 +14,7 @@ export default function Column({ size = 2 }) {
 		)
 
 		// build new cube
+		if (!buildCoords) return
 		setCubesPositions([...cubesPositions, buildCoords])
 	}
 
