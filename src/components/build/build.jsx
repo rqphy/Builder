@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Cube from "../cube/cube"
-export default function Column({ size = 2 }) {
+export default function Build({ size = 2 }) {
 	const [cubesPositions, setCubesPositions] = useState([[0, 0, 0]])
 
 	const handleCubeClick = (_event) => {

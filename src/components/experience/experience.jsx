@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber"
-import Column from "../column/column"
+import Column from "../build/build"
 
 export default function Experience() {
 	return (
