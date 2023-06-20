@@ -1,7 +1,12 @@
 import { useState } from "react"
 import Cube from "../cube/cube"
 export default function Build({ size = 2 }) {
-	const [cubesPositions, setCubesPositions] = useState([[0, 0, 0]])
+	const [cubes, setCubes] = useState([
+		{
+			pos: [0, 0, 0],
+			color: "red",
+		},
+	])
 
 	const handleCubeClick = (_event) => {
 		// obstruct raycaster
@@ -15,7 +20,13 @@ export default function Build({ size = 2 }) {
 
 		// build new cube
 		if (!buildCoords) return
-		setCubesPositions([...cubesPositions, buildCoords])
+		setCubes([
+			...cubes,
+			{
+				pos: buildCoords,
+				color: `hsl(${Math.random() * 360}, 100%, 75%)`,
+			},
+		])
 	}
 
 	// todo: fix undefined coords issue
@@ -31,12 +42,12 @@ export default function Build({ size = 2 }) {
 
 	return (
 		<group>
-			{cubesPositions.map((position) => (
+			{cubes.map((cube) => (
 				<Cube
-					key={position.toString()}
+					key={cube.pos.toString()}
 					size={size}
-					pos={position}
-					color={`hsl(${Math.random() * 360}, 100%, 75%)`}
+					pos={cube.pos}
+					color={cube.color}
 					handleClick={handleCubeClick}
 				/>
 			))}
