@@ -19,6 +19,10 @@ export default function Experience() {
 			/>
 			<ambientLight intensity={0.2} />
 			<Column />
+			<mesh rotation={[Math.PI * 1.5, 0, 0]}>
+				<planeGeometry args={[12, 12]} />
+				<meshPhongMaterial color={"white"} />
+			</mesh>
 		</Canvas>
 	)
 }
