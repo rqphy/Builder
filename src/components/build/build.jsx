@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Cube from "../cube/cube"
 export default function Build({ size = 2 }) {
-	const [cubes, setCubes] = useState([
+	const [cubesList, setCubesList] = useState([
 		{
 			pos: [0, 0, 0],
 			color: "red",
@@ -20,8 +20,8 @@ export default function Build({ size = 2 }) {
 
 		// build new cube
 		if (!buildCoords) return
-		setCubes([
-			...cubes,
+		setCubesList([
+			...cubesList,
 			{
 				pos: buildCoords,
 				color: `hsl(${Math.random() * 360}, 100%, 75%)`,
@@ -42,7 +42,7 @@ export default function Build({ size = 2 }) {
 
 	return (
 		<group>
-			{cubes.map((cube) => (
+			{cubesList.map((cube) => (
 				<Cube
 					key={cube.pos.toString()}
 					size={size}
