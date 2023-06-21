@@ -23,6 +23,8 @@ export default function Experience() {
 				maxAzimuthAngle={Math.PI * 0.7}
 				minPolarAngle={Math.PI * 0.1}
 				maxPolarAngle={Math.PI * 0.4}
+				enableDamping
+				dampingFactor={0.05}
 			/>
 			<ambientLight intensity={0.2} />
 			<Column />
