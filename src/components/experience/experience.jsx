@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber"
 import Column from "../build/build"
+import { OrbitControls } from "@react-three/drei"
 
 export default function Experience() {
 	return (
@@ -16,6 +17,12 @@ export default function Experience() {
 				position={[3, 2, 4]}
 				intensity={1}
 				color={"#e8dfdd"}
+			/>
+			<OrbitControls
+				minAzimuthAngle={Math.PI * -0.5}
+				maxAzimuthAngle={Math.PI * 0.7}
+				minPolarAngle={Math.PI / 6}
+				maxPolarAngle={Math.PI - Math.PI / 6}
 			/>
 			<ambientLight intensity={0.2} />
 			<Column />
