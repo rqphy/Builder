@@ -21,8 +21,8 @@ export default function Experience() {
 			<OrbitControls
 				minAzimuthAngle={Math.PI * -0.5}
 				maxAzimuthAngle={Math.PI * 0.7}
-				minPolarAngle={Math.PI / 6}
-				maxPolarAngle={Math.PI - Math.PI / 6}
+				minPolarAngle={Math.PI * 0.1}
+				maxPolarAngle={Math.PI * 0.4}
 			/>
 			<ambientLight intensity={0.2} />
 			<Column />
