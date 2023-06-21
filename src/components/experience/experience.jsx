@@ -19,11 +19,16 @@ export default function Experience() {
 				color={"#e8dfdd"}
 			/>
 			<OrbitControls
+				enableDamping
+				enablePan={false}
+				// enableZoom={false}
 				minAzimuthAngle={Math.PI * -0.5}
 				maxAzimuthAngle={Math.PI * 0.7}
 				minPolarAngle={Math.PI * 0.1}
 				maxPolarAngle={Math.PI * 0.4}
-				enableDamping
+				minDistance={5}
+				maxDistance={30}
+				rotateSpeed={0.5}
 				dampingFactor={0.05}
 			/>
 			<ambientLight intensity={0.2} />
