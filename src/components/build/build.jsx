@@ -37,8 +37,9 @@ export default function Build({ size = 2 }) {
 
         // Check limits
         if (
-            objectPos[directionIndex] > size ||
-            objectPos[directionIndex] < -size
+            (objectPos[directionIndex] > size ||
+                objectPos[directionIndex] < -size) &&
+            directionIndex != 1
         )
             return false
 
