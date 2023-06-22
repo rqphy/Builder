@@ -47,11 +47,12 @@ export default function Build({ size = 2 }) {
         if (directionIndex === -1) return
 
         // check direction
-        if (pointerPos[directionIndex] > 0) {
+        if (pointerPos[directionIndex] - objectPos[directionIndex] > 0) {
             newCoords[directionIndex] = pointerPos[directionIndex] + size / 2
         } else {
             newCoords[directionIndex] = pointerPos[directionIndex] - size / 2
         }
+        console.log(newCoords, pointerPos)
 
         return newCoords
     }
