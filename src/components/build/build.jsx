@@ -33,8 +33,15 @@ export default function Build({ size = 2 }) {
     const findBuildCoords = (point, eventObjectPos) => {
         const objectPos = [...Object.values(eventObjectPos)]
         const pointerPos = [...Object.values(point)]
-        console.log(pointerPos)
         const directionIndex = pointerPos.findIndex((x) => x % 1 === 0)
+
+        // Check limits
+        if (
+            objectPos[directionIndex] > size ||
+            objectPos[directionIndex] < -size
+        )
+            return false
+
         const newCoords = [...objectPos]
         if (directionIndex === -1) return
 
