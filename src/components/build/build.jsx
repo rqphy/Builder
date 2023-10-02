@@ -1,31 +1,23 @@
 import { useState } from "react"
 import Cube from "../cube/cube"
 
-function fillCubeBase(size) {
+function fillCubeBase(size, limits) {
 	const base = []
-	const limits = {}
-	limits.min = -5
-	limits.max = 5
 
-	for (let i = limits.min; i < limits.max; i++) {
-		console.log(i)
+	for (let x = -limits; x <= limits; x++) {
+		for (let z = -limits; z <= limits; z++) {
+			base.push({
+				pos: [x * size, 0, z * size],
+				color: "white",
+			})
+		}
 	}
+
+	return base
 }
 
-const cubeBase = [
-	{
-		pos: [0, 0, 0],
-		color: "white",
-	},
-]
-
 export default function Build({ size = 2, limits = 2 }) {
-	const [cubesList, setCubesList] = useState([
-		{
-			pos: [0, 0, 0],
-			color: "white",
-		},
-	])
+	const [cubesList, setCubesList] = useState([...fillCubeBase(size, limits)])
 
 	const handleCubeClick = (_event) => {
 		// obstruct raycaster
