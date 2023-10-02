@@ -1,10 +1,29 @@
 import { useState } from "react"
 import Cube from "../cube/cube"
-export default function Build({ size = 2 }) {
+
+function fillCubeBase(size) {
+	const base = []
+	const limits = {}
+	limits.min = -5
+	limits.max = 5
+
+	for (let i = limits.min; i < limits.max; i++) {
+		console.log(i)
+	}
+}
+
+const cubeBase = [
+	{
+		pos: [0, 0, 0],
+		color: "white",
+	},
+]
+
+export default function Build({ size = 2, limits = 2 }) {
 	const [cubesList, setCubesList] = useState([
 		{
 			pos: [0, 0, 0],
-			color: "red",
+			color: "white",
 		},
 	])
 
@@ -35,12 +54,12 @@ export default function Build({ size = 2 }) {
 		const pointerPos = [...Object.values(point)]
 		const directionIndex = pointerPos.findIndex((x) => x % 1 === 0)
 
-		console.log(objectPos)
+		console.log(objectPos, directionIndex)
 
 		// Check limits
 		if (
-			(objectPos[directionIndex] > size ||
-				objectPos[directionIndex] < -size) &&
+			(objectPos[directionIndex] > (limits - 1) * size ||
+				objectPos[directionIndex] < -(limits - 1) * size) &&
 			directionIndex != 1
 		)
 			return false
