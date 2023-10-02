@@ -3,9 +3,14 @@ export default function Cube({
 	color = "red",
 	size = 2,
 	handleClick,
+	isBase = false,
 }) {
 	return (
-		<mesh scale={size} position={pos} onClick={handleClick}>
+		<mesh
+			scale={[size, isBase ? size / 2 : size, size]}
+			position={pos}
+			onClick={handleClick}
+		>
 			<boxGeometry />
 			<meshBasicMaterial color={color} />
 		</mesh>

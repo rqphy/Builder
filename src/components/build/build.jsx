@@ -7,8 +7,9 @@ function fillCubeBase(size, limits) {
 	for (let x = -limits; x <= limits; x++) {
 		for (let z = -limits; z <= limits; z++) {
 			base.push({
-				pos: [x * size, 0, z * size],
+				pos: [x * size, size / 4, z * size],
 				color: "white",
+				isBase: true,
 			})
 		}
 	}
@@ -78,6 +79,7 @@ export default function Build({ size = 2, limits = 2 }) {
 					pos={cube.pos}
 					color={cube.color}
 					handleClick={handleCubeClick}
+					isBase={cube.isBase ?? false}
 				/>
 			))}
 		</group>
